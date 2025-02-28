@@ -8,3 +8,4 @@
 ## 字符串
 
 * [Manacher](./src/com/lynx/algorithm/string/Manacher.java) - 最长回文子串
+* [KMP](./src/com/lynx/algorithm/string/Kmp.java) - 字符串匹配
