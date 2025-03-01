@@ -1,6 +1,6 @@
 package com.lynx.lc.c23;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 2331.计算布尔二叉树的值

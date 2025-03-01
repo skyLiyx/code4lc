@@ -1,6 +1,6 @@
 package com.lynx.lc.c4;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 404.左叶子之和

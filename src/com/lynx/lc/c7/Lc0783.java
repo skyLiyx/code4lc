@@ -1,7 +1,7 @@
 package com.lynx.lc.c7;
 
 import com.lynx.lc.c5.Lc0530;
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 783.二叉搜索树节点最小距离

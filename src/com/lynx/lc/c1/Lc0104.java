@@ -1,6 +1,6 @@
 package com.lynx.lc.c1;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 104.二叉树的最大深度

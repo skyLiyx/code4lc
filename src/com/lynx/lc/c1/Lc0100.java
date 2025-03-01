@@ -1,6 +1,6 @@
 package com.lynx.lc.c1;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 100.相同的树

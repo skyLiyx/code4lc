@@ -1,6 +1,6 @@
 package com.lynx.lc.c9;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 938.二叉搜索树的范围和

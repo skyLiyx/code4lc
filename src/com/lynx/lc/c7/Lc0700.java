@@ -1,6 +1,6 @@
 package com.lynx.lc.c7;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 700.二叉搜索树中的搜索

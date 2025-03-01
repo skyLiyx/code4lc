@@ -1,6 +1,6 @@
 package com.lynx.lc.c6;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 671.二叉树中第二小的节点

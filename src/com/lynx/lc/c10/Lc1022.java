@@ -1,6 +1,6 @@
 package com.lynx.lc.c10;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 1022.从根到叶的二进制数之和

@@ -1,6 +1,6 @@
 package com.lynx.lc.c0;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

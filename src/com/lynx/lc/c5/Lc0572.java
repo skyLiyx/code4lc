@@ -1,6 +1,6 @@
 package com.lynx.lc.c5;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 572.另一棵树的子树

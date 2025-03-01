@@ -1,6 +1,6 @@
 package com.lynx.lc.c2;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 226.翻转二叉树

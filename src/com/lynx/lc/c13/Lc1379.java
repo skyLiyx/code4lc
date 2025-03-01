@@ -1,6 +1,6 @@
 package com.lynx.lc.c13;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 1379.找出克隆二叉树中的相同节点

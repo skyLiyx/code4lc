@@ -1,6 +1,6 @@
 package com.lynx.lc.c22;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 2236.判断根结点是否等于子结点之和

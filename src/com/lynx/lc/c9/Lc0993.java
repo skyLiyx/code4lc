@@ -1,6 +1,6 @@
 package com.lynx.lc.c9;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 993.二叉树的堂兄弟节点

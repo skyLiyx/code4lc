@@ -1,6 +1,6 @@
 package com.lynx.lc.c6;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 /**
  * 617.合并二叉树

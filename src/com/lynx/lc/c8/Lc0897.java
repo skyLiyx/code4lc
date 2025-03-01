@@ -1,6 +1,6 @@
 package com.lynx.lc.c8;
 
-import com.lynx.util.TreeNode;
+import com.lynx.util.BinaryTree.TreeNode;
 
 import java.util.Stack;
 
