@@ -31,6 +31,9 @@ package com.lynx.algorithm.string;
  * 换种说法，下方在C之前的子串和上方在D之前相同长度的子串可以确定匹配，
  * 所以由next数组确定的C的前缀可以和D前面相同长度的子串直接匹配。由此
  * 可以实现常数级的损耗降低。
+ * <p>更详细的内容请参考：
+ * <a href="https://oi-wiki.org/string/kmp/">前缀函数与KMP
+ * 算法 - OI Wiki</a>
  */
 public class Kmp {
     public static int kmpSearch(String text, String pattern) {
@@ -63,9 +66,8 @@ public class Kmp {
             // 作为待比较位置j，比较两个位置的字符：
             // - 如果相同，那么next[i]可以直接+1（不可能更长，否则next[i-1]的
             // 值有错）；
-            // - 如果不同，那么待比较位置j从next[i-1]位置继续往前跳到next[j]，
-            // 直到两个字符相同或者j无法再跳为止（同样的不可能更长，否则next[j]
-            // 的值有错）。
+            // - 如果不同，那么待比较位置j从当前位置继续往前跳到next[j]，直到两个
+            // 字符相同或者j无法再跳为止（同样的不可能更长，否则next[j]的值有错）。
             int j = i - 1;
             while (j > 0 && m.charAt(j) != m.charAt(next[j])) {
                 j = next[j];
