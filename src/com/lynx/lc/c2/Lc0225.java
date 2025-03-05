@@ -8,6 +8,12 @@ import java.util.Queue;
  */
 public class Lc0225 {
 
+    /**
+     * 实现原理：
+     * <p>每次进入队列之后，把之前的数据都出一次，再进一次。这样
+     * 队尾的元素的总是能到队首，且队列顺序是按照进入顺序倒序排列
+     * 的。
+     */
     public static class MyStack {
         private final Queue<Integer> queue;
 

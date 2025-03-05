@@ -7,6 +7,12 @@ import java.util.Stack;
  */
 public class Lc0232 {
 
+    /**
+     * 实现原理：
+     * <p>准备两个栈，一个作为入队，一个作为出队。
+     * 每当执行pop和peek操作时，如果出队栈是空的，那么就将入队栈的所有
+     * 元素都弹出并压入入队栈中，这样就实现先入栈的在出队栈的顶部。
+     */
     public static class MyQueue {
 
         private final Stack<Integer> in;
