@@ -11,11 +11,11 @@ import java.util.List;
 public class Lc0257 {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> res = new ArrayList<>();
-        backtrack(res, root, new ArrayList<>());
+        backtrace(res, root, new ArrayList<>());
         return res;
     }
 
-    private void backtrack(List<String> res, TreeNode root, List<String> path) {
+    private void backtrace(List<String> res, TreeNode root, List<String> path) {
         if (root == null) {
             return;
         }
@@ -25,8 +25,8 @@ public class Lc0257 {
             path.remove(path.size() - 1);
             return;
         }
-        backtrack(res, root.left, path);
-        backtrack(res, root.right, path);
+        backtrace(res, root.left, path);
+        backtrace(res, root.right, path);
         path.remove(path.size() - 1);
     }
 }
