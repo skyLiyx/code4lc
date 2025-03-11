@@ -1,9 +1,9 @@
 package com.lynx.lc.c3;
 
 /**
- * 392.字符串解码
+ * 394.字符串解码
  */
-public class Lc0392 {
+public class Lc0394 {
     private int where;
 
     public String decodeString(String s) {
