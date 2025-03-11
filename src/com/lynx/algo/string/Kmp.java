@@ -1,4 +1,4 @@
-package com.lynx.algorithm.string;
+package com.lynx.algo.string;
 
 /**
  * KMP（Knuth-Morris-Pratt）算法，用于匹配子字符串。

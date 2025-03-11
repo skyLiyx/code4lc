@@ -5,6 +5,7 @@
 这里记录了[leetcode](https://leetcode.cn)上算法题库的题解，同时记录了一些算法。
 
 # 题目分类
+
 - [递归](#递归)
 - [DFS](#DFS)
 - [数据结构设计](#数据结构设计)
@@ -33,6 +34,7 @@
 - 622.设计循环队列
 - 641.设计循环双端队列
 - 707.设计链表
+- 1804.实现Trie（前缀树）
 
 ### 动态规划
 
@@ -53,5 +55,6 @@
 
 ### 字符串
 
-* [Manacher](./src/com/lynx/algorithm/string/Manacher.java) - 最长回文子串
-* [KMP](./src/com/lynx/algorithm/string/Kmp.java) - 字符串匹配
+* [Manacher](./src/com/lynx/algo/string/Manacher.java) - 最长回文子串
+* [KMP](./src/com/lynx/algo/string/Kmp.java) - 字符串匹配
+* [前缀树 (Trie)](./src/com/lynx/algo/string/Trie.java) - 字符串统计

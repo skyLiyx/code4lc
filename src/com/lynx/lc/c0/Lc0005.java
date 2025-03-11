@@ -1,6 +1,6 @@
 package com.lynx.lc.c0;
 
-import com.lynx.algorithm.string.Manacher;
+import com.lynx.algo.string.Manacher;
 
 /**
  * 5.最长回文子串

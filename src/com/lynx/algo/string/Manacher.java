@@ -1,4 +1,4 @@
-package com.lynx.algorithm.string;
+package com.lynx.algo.string;
 
 /**
  * Manacher，“马拉车”算法，专门用于计算最长回文子串的算法。
