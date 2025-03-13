@@ -3,28 +3,30 @@ package com.lynx.lc.c33;
 import java.util.Arrays;
 
 /**
- * 3305.元音辅音字符串计数 I
+ * 3306. 元音辅音字符串计数 II
  *
- * @date 2025/03/12
+ * @apiNote 与3305题目一样采用滑动窗口解法，唯一区别是数据量不同。
+ * @date 2025/03/13
  */
-public class Lc3305 {
+public class Lc3306 {
+
     private int n;
 
     private final int[] cnt = new int[26];
 
     private final int[] idx = new int[] {
-            0, 'e' - 'a', 'i' - 'a', 'o' - 'a', 'u' - 'a'
+        0, 'e' - 'a', 'i' - 'a', 'o' - 'a', 'u' - 'a'
     };
 
-    public int countOfSubstrings(String word, int k) {
+    public long countOfSubstrings(String word, int k) {
         n = word.length();
         // 恰好包含k个 = 至少包含k个 - 至少包含k+1个
         return count(word, k) - count(word, k + 1);
     }
 
-    private int count(String word, int k) {
+    private long count(String word, int k) {
         Arrays.fill(cnt, 0);
-        int ans = 0;
+        long ans = 0;
         for (int l = 0, r = 0; r < word.length(); r++) {
             char c = word.charAt(r);
             cnt[c - 'a']++;
