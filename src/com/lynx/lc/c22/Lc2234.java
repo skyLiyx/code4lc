@@ -25,7 +25,7 @@ public class Lc2234 {
         if ((long)target * n - totalFlowers <= newFlowers) {
             ans = (long)full * n;
         }
-        int prefixSum = 0;
+        long prefixSum = 0;
         int j = 0;
         for (int i = 0; i < n; i++) {
             if (i != 0) {

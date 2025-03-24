@@ -6,10 +6,10 @@ package com.lynx.lc.c5;
 public class Lc0509 {
     public int fib(int n) {
         int pre2 = 0,  pre1 = 1;
-        for (int i = 1; i <= n; i++) {
-            int temp = pre1;
-            pre1 = pre1 + pre2;
-            pre2 = temp;
+        for (int i = 1, next; i <= n; i++) {
+            next = pre2 + pre1;
+            pre2 = pre1;
+            pre1 = next;
         }
         return pre2;
     }
