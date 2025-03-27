@@ -21,5 +21,21 @@ public class BinaryTree {
             this.left = left;
             this.right = right;
         }
+
+        // for debug
+        public static TreeNode build(String[] vals) {
+            return build(vals, 0);
+        }
+
+        private static TreeNode build(String[] vals, int i) {
+            if (i >= vals.length || vals[i].equals("null")) {
+                return null;
+            }
+            return new TreeNode(
+                    Integer.parseInt(vals[i]),
+                    build(vals, i * 2 + 1),
+                    build(vals, i * 2 + 2)
+                    );
+        }
     }
 }
