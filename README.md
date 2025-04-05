@@ -231,6 +231,6 @@
 
 ### 字符串
 
-* [Manacher](./src/com/lynx/algo/string/Manacher.java) - 最长回文子串
-* [KMP](./src/com/lynx/algo/string/Kmp.java) - 字符串匹配
-* [前缀树 (Trie)](./src/com/lynx/algo/string/Trie.java) - 字符串统计
+* [Manacher](src/lyx/algo/string/Manacher.java) - 最长回文子串
+* [KMP](src/lyx/algo/string/Kmp.java) - 字符串匹配
+* [前缀树 (Trie)](src/lyx/algo/string/Trie.java) - 字符串统计
