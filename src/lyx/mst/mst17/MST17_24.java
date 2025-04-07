@@ -1,4 +1,4 @@
-package lyx.mst;
+package lyx.mst.mst17;
 
 import java.util.Arrays;
 

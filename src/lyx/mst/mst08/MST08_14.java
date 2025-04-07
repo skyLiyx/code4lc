@@ -1,4 +1,4 @@
-package lyx.mst;
+package lyx.mst.mst08;
 
 /**
  * 面试题 08.14. 布尔运算
