@@ -11,11 +11,11 @@ import java.util.List;
 public class Lc0046 {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
-        recur(ans, nums, 0);
+        dfs(ans, nums, 0);
         return ans;
     }
 
-    private void recur(List<List<Integer>> ans, int[] nums, int i) {
+    private void dfs(List<List<Integer>> ans, int[] nums, int i) {
         if (i == nums.length) {
             List<Integer> list = new ArrayList<>();
             for (int num : nums) {
@@ -27,7 +27,7 @@ public class Lc0046 {
         // 将当前下标与后面的下标依次互换，然后递归处理后面的数
         for (int j = i; j < nums.length; j++) {
             swap(nums, i, j);
-            recur(ans, nums, i + 1);
+            dfs(ans, nums, i + 1);
             swap(nums, i, j);
         }
     }

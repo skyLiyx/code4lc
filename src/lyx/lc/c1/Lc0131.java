@@ -10,31 +10,33 @@ import java.util.List;
  */
 public class Lc0131 {
     public List<List<String>> partition(String s) {
-        List<List<String>> res = new ArrayList<>();
-        backtrace(res, new ArrayList<>(), s, 0);
-        return res;
+        List<List<String>> ans = new ArrayList<>();
+        char[] arr = s.toCharArray();
+        dfs(ans, new ArrayList<>(), arr, 0, 0);
+        return ans;
     }
 
-    private void backtrace(List<List<String>> res, List<String> list, String s, int begin) {
-        if (begin >= s.length()) {
-            res.add(new ArrayList<>(list));
+    private void dfs(List<List<String>> ans, List<String> list, char[] arr, int l, int r) {
+        if (l == arr.length) {
+            ans.add(new ArrayList<>(list));
             return;
         }
-        // 从长度1开始查找
-        for (int i = 1; i <= s.length() - begin; i++) {
-            if (!isPalindrome(s, begin, begin + i)) {
-                continue;
-            }
-            list.add(s.substring(begin, begin + i));
-            // 确定一个回文后，按照此方法继续查找剩余字符
-            backtrace(res, list, s, begin + i);
+        if (r == arr.length) {
+            return;
+        }
+        // 不在这里分割，继续往右扩
+        dfs(ans, list, arr, l, r + 1);
+        // 在这里分割，是回文才能在这里分割
+        if (check(arr, l, r)) {
+            list.add(new String(arr, l, r - l + 1)); // 分割的就是l~r范围的子串
+            dfs(ans, list, arr, r + 1, r + 1); // 然后新的子串从r+1开始
             list.remove(list.size() - 1);
         }
     }
 
-    private boolean isPalindrome(String s, int begin, int end) {
-        while (begin < end) {
-            if (s.charAt(begin++) != s.charAt(--end)) {
+    private boolean check(char[] arr, int l, int r) {
+        while (l <= r) {
+            if (arr[l++] != arr[r--]) {
                 return false;
             }
         }

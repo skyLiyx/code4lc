@@ -5,32 +5,31 @@ package lyx.lc.c0;
  */
 public class Lc0034 {
     public int[] searchRange(int[] nums, int target) {
-        int[] ans = {-1,-1};
-        int l = 0, r = nums.length - 1, m;
+        int n = nums.length, l = 0, r = n - 1, m;
+        int firstGreatThan = n, lastLessThan = -1;
         while (l <= r) {
             m = l + (r - l) / 2;
-            if (nums[m] >= target) {
-                if (nums[m] == target) {
-                    ans[0] = m;
-                }
+            if (nums[m] > target) {
+                firstGreatThan = m;
                 r = m - 1;
             } else {
                 l = m + 1;
             }
         }
         l = 0;
-        r = nums.length - 1;
+        r = n - 1;
         while (l <= r) {
             m = l + (r - l) / 2;
-            if (nums[m] <= target) {
-                if (nums[m] == target) {
-                    ans[1] = m;
-                }
-                l = m + 1;
-            } else {
+            if (nums[m] >= target) {
                 r = m - 1;
+            } else {
+                lastLessThan = m;
+                l = m + 1;
             }
         }
-        return ans;
+        if (lastLessThan + 1 == firstGreatThan) {
+            return new int[]{-1, -1};
+        }
+        return new int[]{lastLessThan + 1, firstGreatThan - 1};
     }
 }
