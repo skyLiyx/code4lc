@@ -20,6 +20,7 @@ public class Lc0114 {
                 l = l.right;
             }
             l.right = r;
+            root.left = null;
         }
         flatten(root.right);
     }

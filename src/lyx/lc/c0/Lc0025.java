@@ -27,9 +27,6 @@ public class Lc0025 {
             cur = cur.next;
             cnt++;
         }
-        if (cnt != k || cur == null) {
-            return null;
-        }
         return cur;
     }
 

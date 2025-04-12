@@ -1,25 +1,9 @@
 package lyx.lc.c2;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 208. 实现 Trie (前缀树)
  */
 public class Lc0208 {
-
-    private static class TrieNode {
-        public int pass;
-        public int end;
-        Map<Integer, TrieNode> nexts;
-
-        public TrieNode() {
-            pass = 0;
-            end = 0;
-            nexts = new HashMap<>();
-        }
-    }
-
 
     public static class Trie {
 
@@ -34,14 +18,12 @@ public class Lc0208 {
          */
         public void insert(String text) {
             TrieNode node = root;
-            node.pass++;
             for (int i = 0, path; i < text.length(); i++) {
-                path = text.charAt(i);
-                if (!node.nexts.containsKey(path)) {
-                    node.nexts.put(path, new TrieNode());
+                path = text.charAt(i) - 'a';
+                if (node.next[path] == null) {
+                    node.next[path] = new TrieNode();
                 }
-                node = node.nexts.get(path);
-                node.pass++;
+                node = node.next[path];
             }
             node.end++;
         }
@@ -49,16 +31,16 @@ public class Lc0208 {
         /**
          * 查找字符串出现次数。
          */
-        public int search(String text) {
+        public boolean search(String text) {
             TrieNode node = root;
             for (int i = 0, path; i < text.length(); i++) {
-                path = text.charAt(i);
-                if (!node.nexts.containsKey(path)) {
-                    return 0;
+                path = text.charAt(i) - 'a';
+                if (node.next[path] == null) {
+                    return false;
                 }
-                node = node.nexts.get(path);
+                node = node.next[path];
             }
-            return node.end;
+            return node.end != 0;
         }
 
         /**
@@ -67,13 +49,24 @@ public class Lc0208 {
         public boolean startsWith(String prefix) {
             TrieNode node = root;
             for (int i = 0, path; i < prefix.length(); i++) {
-                path = prefix.charAt(i);
-                if (!node.nexts.containsKey(path)) {
+                path = prefix.charAt(i) - 'a';
+                if (node.next[path] == null) {
                     return false;
                 }
-                node = node.nexts.get(path);
+                node = node.next[path];
             }
             return true;
+        }
+
+        private static class TrieNode {
+            public int end;
+            public TrieNode[] next;
+
+            public TrieNode() {
+                end = 0;
+                // 如果字符不确定，可以改为map
+                next = new TrieNode[26];
+            }
         }
     }
 }

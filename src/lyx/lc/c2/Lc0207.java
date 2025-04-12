@@ -8,31 +8,11 @@ import java.util.Arrays;
  * @apiNote 拓扑排序
  */
 public class Lc0207 {
-    private static final int MAXN = 5001;
-
-    private final int[] head = new int[MAXN];
-
-    private final int[] next = new int[MAXN];
-
-    private final int[] to = new int[MAXN];
-
-    private int cnt;
-
-    private final int[] queue = new int[MAXN];
-    private int l, r;
-
-    private final int[] indegree = new int[MAXN];
-
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        l = r = 0;
-        cnt = 1;
-        Arrays.fill(head, 1, numCourses + 1, 0);
-        Arrays.fill(indegree, 1, numCourses + 1, 0);
-        for (int[] p : prerequisites) {
-            next[cnt] = head[p[1]];
-            to[cnt] = p[0];
-            head[p[1]] = cnt++;
-            indegree[p[0]]++;
+        build(numCourses);
+        for (int[] prerequisite : prerequisites) {
+            addEdge(prerequisite[1], prerequisite[0]);
+            indegree[prerequisite[0]]++;
         }
         for (int i = 0; i < numCourses; i++) {
             if (indegree[i] == 0) {
@@ -41,14 +21,46 @@ public class Lc0207 {
         }
         int fill = 0;
         while (l < r) {
-            int cur = queue[l++];
+            int u = queue[l++];
             fill++;
-            for (int e = head[cur]; e > 0; e = next[e]) {
-                if (--indegree[to[e]] == 0) {
-                    queue[r++] = to[e];
+            for (int ei = head[u]; ei > 0; ei = next[ei]) {
+                int v = to[ei];
+                if (--indegree[v] == 0) {
+                    queue[r++] = v;
                 }
             }
         }
         return fill == numCourses;
+    }
+
+    private static final int MAXN = 2001;
+
+    private static final int MAXM = 5001;
+
+    private static final int[] head = new int[MAXN];
+
+    private static final int[] next = new int[MAXM];
+
+    private static final int[] to = new int[MAXM];
+
+    private static int cnt;
+
+    private static final int[] indegree = new int[MAXN];
+
+    private static final int[] queue = new int[MAXN];
+
+    private static int l, r;
+
+    private void build(int n) {
+        Arrays.fill(head, 0, n + 1, 0);
+        cnt = 1;
+        Arrays.fill(indegree, 0, n + 1, 0);
+        l = r = 0;
+    }
+
+    private void addEdge(int u, int v) {
+        next[cnt] = head[u];
+        to[cnt] = v;
+        head[u] = cnt++;
     }
 }

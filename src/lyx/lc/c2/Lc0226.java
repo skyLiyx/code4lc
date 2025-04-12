@@ -10,19 +10,11 @@ public class Lc0226 {
         if (root == null) {
             return null;
         }
-        TreeNode node = new TreeNode(root.val);
-        invertTree(node, root.left, root.right);
-        return node;
-    }
-
-    private void invertTree(TreeNode node, TreeNode left, TreeNode right) {
-        if (left != null) {
-            node.right = new TreeNode(left.val);
-            invertTree(node.right, left.left, left.right);
-        }
-        if (right != null) {
-            node.left = new TreeNode(right.val);
-            invertTree(node.left, right.left, right.right);
-        }
+        invertTree(root.left);
+        invertTree(root.right);
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        return root;
     }
 }
