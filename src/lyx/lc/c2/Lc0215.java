@@ -14,6 +14,7 @@ public class Lc0215 {
         int l = 0, r = nums.length - 1;
         int ans = 0;
         while (l <= r) {
+            swap(nums, r, l + (int) (Math.random() * (r - l + 1)));
             int[] partitionIndex = partition(nums, l, r);
             if (partitionIndex[0] <= n && partitionIndex[1] >= n) {
                 ans = nums[partitionIndex[0]];
